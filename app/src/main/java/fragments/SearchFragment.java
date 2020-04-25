@@ -13,9 +13,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mydictionary.ListWords;
 import com.example.mydictionary.R;
-import com.example.mydictionary.WordDetailActivity;
+import activities.WordDetailActivity;
 
 import java.util.List;
 
@@ -41,7 +40,7 @@ public class SearchFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.list_search_word);
         tvLookUp = view.findViewById(R.id.tvLookup);
-        String check = "check";
+        tvLookUp.setVisibility(View.VISIBLE);
     }
 
     public void search(final List<Word> listWords){

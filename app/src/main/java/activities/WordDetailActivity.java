@@ -1,4 +1,4 @@
-package com.example.mydictionary;
+package activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import com.example.mydictionary.R;
 
 import objects.Word;
 
@@ -53,9 +55,20 @@ public class WordDetailActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent intent = new Intent(getBaseContext(), WordMarkActivity.class);
+        /*Intent intent = new Intent(getBaseContext(), WordMarkActivity.class);
         intent.putExtra("word", word);
-        startActivity(intent);
+        startActivity(intent);*/
+
+        switch (item.getItemId()){
+            case R.id.mark_word_item:
+                Intent intent = new Intent(getBaseContext(), WordMarkActivity.class);
+                intent.putExtra("word", word);
+                startActivity(intent);
+                break;
+            case R.id.memorize_word_item:
+
+                break;
+        }
         return true;
     }
 }

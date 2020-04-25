@@ -10,6 +10,10 @@ public class Word implements Serializable {
 
     public Word(){}
 
+    public Word(String key){
+        this.key = key;
+    }
+
     public Word(String key, List<Meaning> meanings) {
         this.key = key;
         this.meanings = meanings;
@@ -21,6 +25,18 @@ public class Word implements Serializable {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public void add(String type){
+        meanings.add(new Meaning(type));
+    }
+    public Meaning getLast(){
+        int size = meanings.size();
+        if(size > 0) return meanings.get(size - 1);
+            else {
+                meanings.add(new Meaning(" "));
+                return meanings.get(0);
+            }
     }
 
     public List<Meaning> getMeanings() {
@@ -56,7 +72,7 @@ public class Word implements Serializable {
         String result = "";
         int meaningSize = meanings.size();
         for(int i = 0 ; i < meaningSize; i++){
-            result = result + meanings.get(i).getType()+ "\n";
+            result = result + "*" + meanings.get(i).getType()+ "\n";
             int size = meanings.get(i).size();
             for(int j = 0; j < size; j++)
                 result = result + meanings.get(i).getMeaning().get(j) + "\n";

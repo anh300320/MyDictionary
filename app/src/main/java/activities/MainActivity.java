@@ -1,4 +1,4 @@
-package com.example.mydictionary;
+package activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,10 @@ import android.widget.TextView;
 import com.arlib.floatingsearchview.FloatingSearchView;
 import com.arlib.floatingsearchview.suggestions.SearchSuggestionsAdapter;
 import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
+import com.example.mydictionary.ListTags;
+import com.example.mydictionary.ListWords;
+import com.example.mydictionary.R;
+import com.example.mydictionary.SearchingWords;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.BufferedInputStream;
@@ -78,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        if(ListTags.isNull()) readData();
+        if(ListTags.isNull()) ListTags.readData(getBaseContext());
 
         findViewById();
 
@@ -148,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.navigation_view);
     }
 
+
+    //ĐỌC DỮ LIỆU TỪ ĐIỂN TRONG ASSETS ĐỂ ĐƯA VÀO LISTWORDS
     List<Word> readFile() throws IOException {
         List<Word> list = new ArrayList<>();
         Word tmp = new Word();
@@ -192,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
         else return null;
     }
 
-    private void readData(){
+    /*private void readData(){
         try {
             // Open stream to read file.
             FileInputStream in = getBaseContext().openFileInput(filename);
@@ -233,6 +239,6 @@ public class MainActivity extends AppCompatActivity {
         }
         if(result.equals("")) return null;
         return result;
-    }
+    }*/
 
 }

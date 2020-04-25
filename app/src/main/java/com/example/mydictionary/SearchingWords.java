@@ -11,7 +11,7 @@ import objects.Word;
 import objects.WordSuggestion;
 
 public class SearchingWords {
-    static List<SearchSuggestion> getSuggestion(String searchWord){
+    public static List<SearchSuggestion> getSuggestion(String searchWord){
         List<SearchSuggestion> suggestions = new ArrayList<>();
 
         int begin = find(searchWord);
@@ -51,7 +51,7 @@ public class SearchingWords {
         return 0;
     }
 
-    static List<Word> search(String searchWord){
+    public static List<Word> search(String searchWord){
         List<Word> result = new ArrayList<>();
         int size = ListWords.size();
 

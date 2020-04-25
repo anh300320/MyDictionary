@@ -1,5 +1,6 @@
 package adapters;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,12 +57,14 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.My
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             tvKey = itemView.findViewById(R.id.list_search_word_key);
             tvType = itemView.findViewById(R.id.list_search_word_type);
         }
 
         @Override
         public void onClick(View v) {
+            Log.d("hehe", "onClick: ");
             itemClickListener.onClick(v, getAdapterPosition());
         }
 

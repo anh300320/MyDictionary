@@ -1,4 +1,4 @@
-package com.example.mydictionary;
+package activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -12,7 +12,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
+
+import com.example.mydictionary.ListTags;
+import com.example.mydictionary.R;
 
 import java.util.List;
 
