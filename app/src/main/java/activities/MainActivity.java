@@ -22,6 +22,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -33,6 +35,7 @@ import fragments.BookmarkFragment;
 import fragments.SearchFragment;
 import fragments.UserFragment;
 import fragments.VocabularyFragment;
+import objects.Hashtag;
 import objects.Meaning;
 import objects.Word;
 import objects.WordSuggestion;
@@ -41,12 +44,17 @@ public class MainActivity extends AppCompatActivity {
 
     AssetManager am;
     BufferedReader reader;
-    InputStream in;
+    //InputStream in;
+    String filename = "vocabulary_blabla.txt";
+    BufferedReader br;
 
     Toolbar toolbar;
     FloatingSearchView searchView;
     BottomNavigationView bottomNavigationView;
     SearchFragment searchFragment = new SearchFragment();
+    BookmarkFragment bookmarkFragment = new BookmarkFragment();
+    VocabularyFragment vocabularyFragment = new VocabularyFragment();
+    UserFragment userFragment = new UserFragment();
 
 
 
@@ -70,9 +78,10 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
+        if(ListTags.isNull()) readData();
 
         findViewById();
+
 
         searchView.setOnSearchListener(new FloatingSearchView.OnSearchListener() {
 
@@ -103,16 +112,20 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()){
                     case R.id.navigation_dict:
+                        searchView.setVisibility(View.VISIBLE);
                         selectedFragment = searchFragment;
                         break;
                     case R.id.navigation_bookmark:
-                        selectedFragment = new BookmarkFragment();
+                        searchView.setVisibility(View.GONE);
+                        selectedFragment = bookmarkFragment;
                         break;
                     case R.id.navigation_vocab:
-                        selectedFragment = new VocabularyFragment();
+                        searchView.setVisibility(View.GONE);
+                        selectedFragment = vocabularyFragment;
                         break;
                     case R.id.navigation_user:
-                        selectedFragment = new UserFragment();
+                        searchView.setVisibility(View.GONE);
+                        selectedFragment = userFragment;
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
@@ -156,12 +169,13 @@ public class MainActivity extends AppCompatActivity {
             word.setKey(line);
             Meaning tmp = null;
             while((line = readLine()) != null)
-                if(line.charAt(0) == '*') {
+                if(line.charAt(0) == '*' || line.charAt(0) == '@') {
                     if (tmp != null) {
                         word.addMeaning(new Meaning(tmp.getType(), tmp.getMeaning()));
                         tmp = null;
                     }
                     line = line.replace("*", "");
+                    line = line.replace("@", "");
                     tmp = new Meaning(line);
                 }   else {
                     if (tmp != null) tmp.addMeaning(line);
@@ -176,6 +190,49 @@ public class MainActivity extends AppCompatActivity {
         String line1 = reader.readLine();
         if((line1 != null) && (!line1.equals(""))) return line1;
         else return null;
+    }
+
+    private void readData(){
+        try {
+            // Open stream to read file.
+            FileInputStream in = getBaseContext().openFileInput(filename);
+
+            br= new BufferedReader(new InputStreamReader(in));
+
+            String line;
+            Hashtag tmp = null;
+
+            while((line = readTagLine()) != null) {
+                //Log.d("hehe", "readData: " + line);
+                if(line.charAt(0) == '#'){
+                    if(tmp != null) ListTags.add(tmp);
+                    tmp = new Hashtag(line.replaceFirst("#", ""));
+                } else
+                if(line.charAt(0) == '@'){
+                    tmp.add(line.replaceFirst("@", ""));
+                } else
+                if(line.charAt(0) == '*'){
+                    tmp.getLast().add(line.replace("*", ""));
+                } else tmp.getLast().getLast().addMeaning(line);
+            }
+            if (tmp != null) ListTags.add(tmp);
+
+        } catch (Exception e) {
+            Log.d("hehe", "Error: " + e.getMessage());
+        }
+
+        //Log.d("hehe", "readData: " + ListTags.show());
+        List<Hashtag> list = ListTags.getAll();
+    }
+    String readTagLine(){
+        String result = null;
+        try {
+            result = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(result.equals("")) return null;
+        return result;
     }
 
 }
