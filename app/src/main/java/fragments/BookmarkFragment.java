@@ -10,21 +10,32 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mydictionary.AlarmReceiver;
+import com.example.mydictionary.ListAlarms;
 import com.example.mydictionary.R;
 
 import java.sql.Time;
 import java.util.Calendar;
 import java.util.concurrent.ScheduledExecutorService;
 
+import adapters.SearchListAdapter;
+import interfaces.OnItemClickListener;
+
 public class BookmarkFragment extends Fragment {
     RecyclerView recyclerView;
+    SearchListAdapter mAdapter;
+    RecyclerView.LayoutManager layoutManager;
+
+
+
 
     @Nullable
     @Override
@@ -36,6 +47,20 @@ public class BookmarkFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         recyclerView = view.findViewById(R.id.fragment_bookmark_recyclerview);
         super.onViewCreated(view, savedInstanceState);
+
+        if(ListAlarms.isNull()) ListAlarms.readFile(getContext());
+
+        recyclerView.hasFixedSize();
+        layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        mAdapter = new SearchListAdapter(ListAlarms.get());
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Toast.makeText(getContext(), "Clicked!", Toast.LENGTH_SHORT).show();
+            }
+        });
+        recyclerView.setAdapter(mAdapter);
     }
 
     /*int alarmHour = timePicker.getHour();

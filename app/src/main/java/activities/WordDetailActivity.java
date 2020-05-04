@@ -66,7 +66,9 @@ public class WordDetailActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.memorize_word_item:
-
+                Intent intent1 = new Intent(getBaseContext(), AlarmActivity.class);
+                intent1.putExtra("word", word);
+                startActivity(intent1);
                 break;
         }
         return true;

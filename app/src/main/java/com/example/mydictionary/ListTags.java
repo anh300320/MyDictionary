@@ -19,7 +19,7 @@ import objects.Word;
 public class ListTags {
     private static List<Hashtag> list = new ArrayList<>();
 
-    static String filename = "vocabulary_blabla.txt";
+    static String filename = "vocabulary_03.txt";
     private static BufferedReader br;
 
 

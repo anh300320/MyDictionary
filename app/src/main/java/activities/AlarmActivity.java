@@ -1,6 +1,7 @@
 package activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -10,9 +11,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
-import android.widget.Toolbar;
 
 import com.example.mydictionary.AlarmReceiver;
+import com.example.mydictionary.ListAlarms;
 import com.example.mydictionary.R;
 
 import java.util.Calendar;
@@ -44,12 +45,12 @@ public class AlarmActivity extends AppCompatActivity {
                 int alarmHour = timePicker.getHour();
                 int alarmMinute = timePicker.getMinute();
 
-                AlarmManager alarmManager = (AlarmManager) getBaseContext().getSystemService(Context.ALARM_SERVICE);
-                Intent intent = new Intent(getBaseContext(), AlarmReceiver.class);
-                intent.setAction("alarm action");
-                intent.putExtra("key_alarm_action", "ALARM!!!!!!!!!!!");
+                AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+                Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+                //intent.setAction("alarm action");
+                intent.putExtra("word", word);
 
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, intent, 0);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTimeInMillis(System.currentTimeMillis());
@@ -59,6 +60,8 @@ public class AlarmActivity extends AppCompatActivity {
                 long timeInMillis = calendar.getTimeInMillis();
 
                 alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, timeInMillis,AlarmManager.INTERVAL_DAY, pendingIntent);
+                ListAlarms.add(word);
+                ListAlarms.writeFile(getBaseContext());
                 finish();
             }
         });

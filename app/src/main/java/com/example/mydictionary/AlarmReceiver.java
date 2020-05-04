@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import objects.Word;
+
 public class AlarmReceiver extends BroadcastReceiver {
 
 
@@ -20,15 +22,16 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         Log.d("hehehe", "ALARM");
         Toast.makeText(context, "MAKE NOTIFICATION!", Toast.LENGTH_LONG).show();
+        Word word =(Word) intent.getSerializableExtra("word");
 
         createNotificationChannel(context);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "noti_bookmark")
                 .setSmallIcon(R.drawable.ic_vocab_black_24dp)
-                .setContentTitle("My notification")
-                .setContentText("Much longer text that cannot fit one line...")
+                .setContentTitle(word.getKey())
+                .setContentText(word.showMeaning())
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("Much longer text that cannot fit one line..."))
+                        .bigText("Learn your words"))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);

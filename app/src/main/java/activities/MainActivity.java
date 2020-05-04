@@ -197,48 +197,4 @@ public class MainActivity extends AppCompatActivity {
         if((line1 != null) && (!line1.equals(""))) return line1;
         else return null;
     }
-
-    /*private void readData(){
-        try {
-            // Open stream to read file.
-            FileInputStream in = getBaseContext().openFileInput(filename);
-
-            br= new BufferedReader(new InputStreamReader(in));
-
-            String line;
-            Hashtag tmp = null;
-
-            while((line = readTagLine()) != null) {
-                //Log.d("hehe", "readData: " + line);
-                if(line.charAt(0) == '#'){
-                    if(tmp != null) ListTags.add(tmp);
-                    tmp = new Hashtag(line.replaceFirst("#", ""));
-                } else
-                if(line.charAt(0) == '@'){
-                    tmp.add(line.replaceFirst("@", ""));
-                } else
-                if(line.charAt(0) == '*'){
-                    tmp.getLast().add(line.replace("*", ""));
-                } else tmp.getLast().getLast().addMeaning(line);
-            }
-            if (tmp != null) ListTags.add(tmp);
-
-        } catch (Exception e) {
-            Log.d("hehe", "Error: " + e.getMessage());
-        }
-
-        //Log.d("hehe", "readData: " + ListTags.show());
-        List<Hashtag> list = ListTags.getAll();
-    }
-    String readTagLine(){
-        String result = null;
-        try {
-            result = br.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if(result.equals("")) return null;
-        return result;
-    }*/
-
 }
