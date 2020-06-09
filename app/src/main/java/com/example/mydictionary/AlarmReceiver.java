@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -22,8 +23,10 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         Log.d("hehehe", "ALARM");
         Toast.makeText(context, "MAKE NOTIFICATION!", Toast.LENGTH_LONG).show();
-        Word word =(Word) intent.getSerializableExtra("word");
-
+        Bundle wordBundle = intent.getExtras();
+//        Word word =(Word) intent.getSerializableExtra("word");
+       // assert wordBundle != null;
+        Word word = (Word) wordBundle.getSerializable("word");
         createNotificationChannel(context);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "noti_bookmark")

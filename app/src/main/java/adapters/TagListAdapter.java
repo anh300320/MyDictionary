@@ -50,7 +50,11 @@ public class TagListAdapter extends RecyclerView.Adapter<TagListAdapter.MyViewHo
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView tvTag;
-        OnItemClickListener itemClickListener;
+        OnItemClickListener itemClickListener = new OnItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+            }
+        };
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

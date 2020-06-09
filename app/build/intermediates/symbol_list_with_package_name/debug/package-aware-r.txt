@@ -669,6 +669,12 @@ color clear_btn_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color color_background_1
+color color_background_2
+color color_primary_1
+color color_text_1
+color color_text_2
+color color_text_3
 color dark_gray
 color design_bottom_navigation_shadow_color
 color design_default_color_primary
@@ -919,6 +925,7 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen margin_1
 dimen mtrl_bottomappbar_fabOffsetEndMode
 dimen mtrl_bottomappbar_fab_cradle_margin
 dimen mtrl_bottomappbar_fab_cradle_rounded_corner_radius
@@ -990,6 +997,9 @@ dimen search_bar_search_input_left_margin
 dimen search_bar_search_input_right_margin
 dimen search_bar_text_size
 dimen search_view_corner_radius
+dimen size_text_1
+dimen size_text_little
+dimen size_text_normal
 dimen square_button_icon_size
 dimen square_button_padding
 dimen square_button_size
@@ -1211,6 +1221,7 @@ id activity_alarm_toolbar
 id activity_chooser_view_content
 id activity_hashtag_listword
 id activity_hashtag_toolbar
+id activity_word_detail_main_layout
 id add
 id alertTitle
 id all
@@ -1249,7 +1260,7 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id detail_key
-id detail_meanings
+id detail_list
 id detail_toolbar
 id dialog_button
 id dimensions
@@ -1305,6 +1316,8 @@ id list_search_word_type
 id main_searchview
 id mark_word_item
 id masked
+id meaning_meanings
+id meaning_type
 id media_actions
 id memorize_word_item
 id menu_view
@@ -1530,6 +1543,7 @@ layout fragment_newword
 layout fragment_search
 layout fragment_user
 layout fragment_vocab
+layout item_meaning
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action

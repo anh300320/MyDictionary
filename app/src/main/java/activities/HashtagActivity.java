@@ -74,6 +74,7 @@ public class HashtagActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         ListTags.delete(hashtag.getTag());
         ListTags.saveToFile(getBaseContext());
+        finish();
         return true;
     }
 }

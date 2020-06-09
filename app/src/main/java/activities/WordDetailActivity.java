@@ -4,15 +4,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.mydictionary.R;
 
+import adapters.WordDetailAdapter;
 import objects.Word;
 
 public class WordDetailActivity extends AppCompatActivity {
@@ -22,6 +26,11 @@ public class WordDetailActivity extends AppCompatActivity {
     TextView tvMeanings;
     Word word;
     Intent intent;
+    ViewGroup vgWord;
+
+    RecyclerView recyclerView;
+    WordDetailAdapter mAdapter;
+    RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,17 +43,23 @@ public class WordDetailActivity extends AppCompatActivity {
         word =(Word) intent.getSerializableExtra("word");
 
         tvKey.setText(word.getKey());
-        tvMeanings.setText(word.showFullMeanings());
         toolbar.setTitle(word.getKey());
         setSupportActionBar(toolbar);
+
+        recyclerView.hasFixedSize();
+        layoutManager = new LinearLayoutManager(getBaseContext());
+        recyclerView.setLayoutManager(layoutManager);
+        mAdapter = new WordDetailAdapter(word.getMeanings());
+        recyclerView.setAdapter(mAdapter);
 
         ActionBar actionBar = getSupportActionBar();
     }
 
     private void findViewById(){
         tvKey = findViewById(R.id.detail_key);
-        tvMeanings = findViewById(R.id.detail_meanings);
         toolbar = findViewById(R.id.detail_toolbar);
+        vgWord = findViewById(R.id.activity_word_detail_main_layout);
+        recyclerView = findViewById(R.id.detail_list);
     }
 
     @Override

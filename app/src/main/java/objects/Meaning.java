@@ -31,6 +31,15 @@ public class Meaning implements Serializable {
         return meaning;
     }
 
+    public String getMeanings(){
+        int size = meaning.size();
+        String result = "";
+        for(int i = 0; i< size; i++){
+            result = result + meaning.get(i) + "\n";
+        }
+        return result;
+    }
+
     public void setMeaning(List<String> meaning) {
         this.meaning = meaning;
     }

@@ -78,6 +78,10 @@ public class ListTags {
         }
     }
 
+    public static void clear(){
+        list.clear();
+    }
+
     //GHI RA FILE TEXT NHỮNG HASHTAG TRONG LIST
     public static void saveToFile(Context context){
         try {
@@ -102,6 +106,9 @@ public class ListTags {
 
     //ĐỌC NHỮNG HASHTAG ĐÃ ĐƯỢC LƯU TRONG FILE TEXT ĐỂ ĐƯA VÀO LIST
     public static void readData(Context context){
+
+        ListTags.clear();
+
         try {
             // Open stream to read file.
             FileInputStream in = context.openFileInput(filename);

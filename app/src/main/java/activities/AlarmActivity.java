@@ -48,7 +48,9 @@ public class AlarmActivity extends AppCompatActivity {
                 AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
                 Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
                 //intent.setAction("alarm action");
-                intent.putExtra("word", word);
+                Bundle wordBundle = new Bundle();
+                wordBundle.putSerializable("word", word);
+                intent.putExtras(wordBundle);
 
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 

@@ -49,4 +49,20 @@ public class VocabularyFragment extends Fragment {
         });
         recyclerView.setAdapter(mAdapter);
     }
+
+    @Override
+    public void onResume() {
+        ListTags.readData(getContext());
+        mAdapter = new TagListAdapter(ListTags.getAll());
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Intent intent = new Intent(getContext(), HashtagActivity.class);
+                intent.putExtra("hashtag", ListTags.get(position));
+                startActivity(intent);
+            }
+        });
+        recyclerView.setAdapter(mAdapter);
+        super.onResume();
+    }
 }
