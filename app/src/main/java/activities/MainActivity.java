@@ -18,10 +18,12 @@ import android.widget.TextView;
 import com.arlib.floatingsearchview.FloatingSearchView;
 import com.arlib.floatingsearchview.suggestions.SearchSuggestionsAdapter;
 import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
+import com.example.mydictionary.LeinerSystem;
 import com.example.mydictionary.ListTags;
 import com.example.mydictionary.ListWords;
 import com.example.mydictionary.R;
 import com.example.mydictionary.SearchingWords;
+import com.example.mydictionary.UserWords;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.BufferedInputStream;
@@ -84,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
 
         if(ListTags.isNull()) ListTags.readData(getBaseContext());
 
+        UserWords.startAdding();
+        LeinerSystem.createBox();
+        LeinerSystem.readData(getBaseContext());
         findViewById();
 
 

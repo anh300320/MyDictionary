@@ -13,5 +13,10 @@
         android:id="@+id/memorize_word_item"
         android:icon="@drawable/ic_vocab_black_24dp"
         app:showAsAction="withText"/>
+    <item
+        android:title = "Add to Current Quest"
+        android:id="@+id/add_to_quest_item"
+        android:icon="@drawable/ic_vocab_black_24dp"
+        app:showAsAction="withText"/>
     </group>
 </menu>

@@ -13,6 +13,9 @@
         <activity android:name="activities.HashtagActivity" />
         <activity android:name="activities.WordMarkActivity" />
         <activity android:name="activities.WordDetailActivity" />
+        <activity android:name="activities.AddWordActivity" />
+        <activity android:name="activities.ChangeQuestActivity" />
+        <activity android:name="activities.DoQuestActivity" />
         <activity android:name="activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

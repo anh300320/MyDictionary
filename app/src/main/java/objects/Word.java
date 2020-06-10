@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Word implements Serializable {
     String key;
-    List<Meaning> meanings = new ArrayList<>();
+    private List<Meaning> meanings = new ArrayList<>();
 
     public Word(){}
 
@@ -21,6 +21,18 @@ public class Word implements Serializable {
 
     public String getKey() {
         return key;
+    }
+
+    public String getRawKey(){
+        int end = key.indexOf('/');
+        if(end > 1) return key.substring(0,end-1);
+        return key;
+    }
+
+    public String getIPA(){
+        int end = key.indexOf('/');
+        if(end > 1) return key.substring(end);
+        return null;
     }
 
     public void setKey(String key) {
@@ -41,6 +53,10 @@ public class Word implements Serializable {
 
     public List<Meaning> getMeanings() {
         return meanings;
+    }
+
+    public int getMeaningsSize(){
+        return meanings.size();
     }
 
     public void setMeanings(List<Meaning> meanings) {

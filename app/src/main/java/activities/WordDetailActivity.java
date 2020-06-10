@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.mydictionary.LeinerSystem;
 import com.example.mydictionary.R;
 
 import adapters.WordDetailAdapter;
@@ -84,6 +85,12 @@ public class WordDetailActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getBaseContext(), AlarmActivity.class);
                 intent1.putExtra("word", word);
                 startActivity(intent1);
+                break;
+            case R.id.add_to_quest_item:
+                String key = word.getKey();
+                LeinerSystem.add(key);
+                LeinerSystem.saveToFile(getBaseContext());
+                LeinerSystem.addToQuest(key);
                 break;
         }
         return true;

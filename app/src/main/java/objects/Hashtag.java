@@ -4,9 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Hashtag implements Serializable {
+public class Hashtag extends WordList implements Serializable {
     String tag;
     List<Word> listWord = new ArrayList<>();
+
+    public boolean isNull(){return listWord.isEmpty();}
+    public int size(){ return listWord.size();}
+/////////////////////////////////
+
 
     public String getTag(){
         return tag;

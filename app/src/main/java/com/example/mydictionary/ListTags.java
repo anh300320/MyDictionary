@@ -22,7 +22,19 @@ public class ListTags {
     static String filename = "vocabulary_03.txt";
     private static BufferedReader br;
 
+    public static Hashtag getUserWord(){ return list.get(0);}
 
+    public static int userSize(){ return list.get(0).size();}//
+
+    public static int size(){ return list.size();}
+
+    public static void createUserWordtag(){
+        if (list.isEmpty()) list.add(new Hashtag("Your Word"));
+        else if (!list.get(0).getTag().equals("Your Word"))
+            list.add(0,new Hashtag("Your Word"));
+    }
+
+    /////////////////
     public static void add(String tag, Word word){
 
         int size = list.size();
