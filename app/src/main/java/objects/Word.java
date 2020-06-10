@@ -1,18 +1,29 @@
 package objects;
 
+import com.example.mydictionary.ListWords;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Word implements Serializable {
     String key;
-    private List<Meaning> meanings = new ArrayList<>();
+    protected List<Meaning> meanings = new ArrayList<>();
 
-    public Word(){}
+    public Word(){ }
 
-    public Word(String key){
-        this.key = key;
+    public Word(Word word){
+        key = word.key;
+        meanings = word.meanings;
     }
+
+    public Word (int wordListIndex){
+        Word word = ListWords.get(wordListIndex);
+        key = word.key;
+        meanings = word.meanings;
+    }
+
+    public Word(String key){ this.key = key; }
 
     public Word(String key, List<Meaning> meanings) {
         this.key = key;
@@ -21,6 +32,14 @@ public class Word implements Serializable {
 
     public String getKey() {
         return key;
+    }
+
+    public String getTypeByIndex(int index){
+        return meanings.get(index).getType();
+    }
+
+    public List<String> getMeaningByIndex(int index){
+        return meanings.get(index).getMeaning();
     }
 
     public String getRawKey(){

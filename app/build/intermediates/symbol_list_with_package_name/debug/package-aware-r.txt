@@ -1228,6 +1228,7 @@ id activity_alarm_toolbar
 id activity_chooser_view_content
 id activity_do_quest_listkey
 id activity_do_quest_noquest_tv
+id activity_do_quest_save_btn
 id activity_do_quest_toolbar
 id activity_hashtag_listword
 id activity_hashtag_toolbar
@@ -1306,6 +1307,7 @@ id group_divider
 id groups
 id guideline
 id guideline5
+id hashtag_addbox_item
 id hashtag_delete_item
 id home
 id homeAsUp

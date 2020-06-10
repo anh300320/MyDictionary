@@ -12,8 +12,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
+import com.example.mydictionary.LeinerSystem;
 import com.example.mydictionary.ListTags;
+import com.example.mydictionary.ListWords;
 import com.example.mydictionary.R;
 
 import java.util.List;
@@ -72,9 +75,19 @@ public class HashtagActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        ListTags.delete(hashtag.getTag());
-        ListTags.saveToFile(getBaseContext());
-        finish();
+        switch (item.getItemId()) {
+            case R.id.hashtag_delete_item:
+                ListTags.delete(hashtag.getTag());
+                ListTags.saveToFile(getBaseContext());
+                finish();
+            case R.id.hashtag_addbox_item:
+                for (Word word : hashtag.getListWord()) {
+                    LeinerSystem.add(word.getKey());
+                }
+                LeinerSystem.saveToFile(getBaseContext());
+                Toast.makeText(HashtagActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                break;
+        }
         return true;
     }
 }

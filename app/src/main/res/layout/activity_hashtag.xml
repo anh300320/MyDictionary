@@ -10,8 +10,7 @@
         android:id="@+id/activity_hashtag_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_primary_1"
-        />
+        android:background="@color/color_primary_1" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/activity_hashtag_listword"

@@ -9,13 +9,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import objects.Meaning;
 import objects.Word;
 
-public class ListWords {
+public class ListWords implements Serializable {
 
     private static List<Word> listWords;
 

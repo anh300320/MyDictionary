@@ -30,10 +30,9 @@ import objects.Word;
 public class AddWordActivity extends AppCompatActivity {
     Word word;
     Meaning meaning;
-    Intent intent;
 
     Button button_submit;
-    Button button_clean;
+    Button button_clear;
     EditText key;
     EditText type;
     EditText meanin;
@@ -66,11 +65,12 @@ public class AddWordActivity extends AppCompatActivity {
                     UserWords.add(word, meaning);
                     ListTags.saveToFile(getBaseContext());
                     Toast.makeText(AddWordActivity.this,"Your word is added successfully!", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
                 else Toast.makeText(AddWordActivity.this, "Word key must have at least a character!", Toast.LENGTH_SHORT).show();
             }
         });
-        button_clean.setOnClickListener(new View.OnClickListener(){
+        button_clear.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 key.setText(null);
@@ -82,11 +82,12 @@ public class AddWordActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        button_clean = findViewById(R.id.activity_addword_clear_btn);
+        button_clear = findViewById(R.id.activity_addword_clear_btn);
         key = findViewById(R.id.activity_addword_key_edit);
         type = findViewById(R.id.activity_addword_wordtype_edit);
         meanin = findViewById(R.id.activity_addword_meaning_edit);
         example = findViewById(R.id.activity_addword_example_edit);
         toolbar = findViewById(R.id.activity_addword_toolbar);
+        button_submit = findViewById(R.id.activity_addword_submit_btn);
     }
 }

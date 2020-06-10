@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Random;
 
 import activities.DoQuestActivity;
+import objects.QuestItem;
 import objects.Word;
 import objects.Hashtag;
 
@@ -25,10 +26,13 @@ public class LeinerSystem {
     private static int Day = 0;
     private static int CurrentDay = 1;
     private static List<String> Quest = new ArrayList<>();
-    public static boolean COMPLETING = false;
 
     public static final boolean UP = true;
     public static final boolean DOWN = false;
+
+    public static int getCurrentDay() {
+        return CurrentDay;
+    }
 
     public static int catchNewDay(){
         Day = CurrentDay;
@@ -42,6 +46,9 @@ public class LeinerSystem {
 
     public static int nextDay(){
         CurrentDay++;
+        makeDailyQuest();
+        int size = Quest.size();
+        for(int i = 0; i < size; i++) updateBox(UP,i);
         return CurrentDay;
     }
 
@@ -59,6 +66,10 @@ public class LeinerSystem {
     }
     public static Word getWordByKey(String key){
         return ListWords.getAll().get(SearchingWords.find(key));
+    }
+
+    public static int findIndexByKey(String key){
+        return Quest.indexOf(key);
     }
 
     public static List<String> getQuest(){
@@ -93,13 +104,12 @@ public class LeinerSystem {
     public static String showQuest(){
         int qSize = Quest.size();
         String result =  'Q' + "\n";
-        if (COMPLETING = true)
             for (int i = 0; i < qSize; i++)
                 result = result + Quest.get(i) + "\n";
         return result;
     }
 
-    public static void add(String key){
+    public static boolean add(String key){
         boolean exist = false;
         for(int i = 0; i < 5; i++) {
             int size = Box.get(i).size();
@@ -110,7 +120,7 @@ public class LeinerSystem {
                 }
         }
         if (!exist) Box.get(0).add(key);
-
+        return exist;
     }
     public static void createBox(){
         for(int i = 0; i < 5; i++){
@@ -146,13 +156,15 @@ public class LeinerSystem {
     }
 
     private static void moveWord(boolean semaphore, int source, int des, int index){
-        if (semaphore = true ) {
+        if (semaphore = UP ) {
             Box.get(des).add(Box.get(source).get(index));
             Box.get(source).remove(index);
+            makeDailyQuest();
         }
         else {
             Box.get(source).add(Box.get(des).get(index));
             Box.get(des).remove(index);
+            makeDailyQuest();
         }
     }
 
@@ -204,7 +216,6 @@ public class LeinerSystem {
         } catch (Exception e) {
             Log.d("hehe", "Error: " + e.getMessage());
         }
-        if (!Quest.isEmpty()) COMPLETING = true;
     }
     static String readTagLine(){
         String result = null;

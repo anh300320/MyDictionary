@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mydictionary.LeinerSystem;
 import com.example.mydictionary.R;
@@ -88,9 +89,11 @@ public class WordDetailActivity extends AppCompatActivity {
                 break;
             case R.id.add_to_quest_item:
                 String key = word.getKey();
-                LeinerSystem.add(key);
-                LeinerSystem.saveToFile(getBaseContext());
-                LeinerSystem.addToQuest(key);
+                if (!LeinerSystem.add(key)) {
+                    LeinerSystem.saveToFile(getBaseContext());
+                    Toast.makeText(WordDetailActivity.this,"Done", Toast.LENGTH_SHORT).show();
+                }
+                else Toast.makeText(WordDetailActivity.this,"This word is already exist in one of your Box", Toast.LENGTH_LONG).show();
                 break;
         }
         return true;

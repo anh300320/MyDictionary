@@ -92,6 +92,7 @@
         android:layout_marginStart="82dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/custom_border"
+        android:visibility="gone"
         android:text="Set to another color pack"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_setting_btn" />
@@ -103,6 +104,7 @@
         android:layout_marginStart="82dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/custom_border"
+        android:visibility="gone"
         android:text="Next the day (Current: Day 1)"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_colorset_btn" />
@@ -115,6 +117,7 @@
         android:layout_marginTop="4dp"
         android:background="@drawable/custom_border"
         android:text="Clear Box Data"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_nextday_btn" />
     <Button
@@ -122,9 +125,10 @@
         android:layout_width="260dp"
         android:layout_height="45dp"
         android:layout_marginStart="82dp"
+        android:visibility="gone"
         android:layout_marginTop="4dp"
         android:background="@drawable/custom_border"
-        android:text="Set Quest"
+        android:text="Set Box"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_boxclear_btn" />
 

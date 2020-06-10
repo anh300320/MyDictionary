@@ -8,9 +8,10 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/activity_do_quest_toolbar"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="61dp"
-        android:background="@drawable/ic_launcher_background"/>
+        android:background="@color/color_primary_1"/>
 
     <TextView
         android:id="@+id/activity_do_quest_noquest_tv"
@@ -32,5 +33,18 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"/>
 
+    <Button
+        android:id="@+id/activity_do_quest_save_btn"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_do_quest_toolbar"
+        android:layout_alignStart="@+id/activity_do_quest_noquest_tv"
+        android:layout_alignEnd="@+id/activity_do_quest_noquest_tv"
+        android:layout_marginStart="251dp"
+        android:layout_marginTop="525dp"
+        android:layout_marginEnd="11dp"
+        android:background="@drawable/custom_border"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Save Quest and exit" />
 
 </RelativeLayout>

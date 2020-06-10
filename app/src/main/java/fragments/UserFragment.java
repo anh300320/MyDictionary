@@ -42,6 +42,7 @@ public class UserFragment extends Fragment {
     private Button changeq_btn;
     private Button complete_btn;
     private Button setting_btn;
+    private Button setcolor_btn;
     private Button nextday_btn;
     private Button boxclear_btn;
     private Button setquest_btn;
@@ -90,10 +91,27 @@ public class UserFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        setting_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (setcolor_btn.getVisibility() == View.GONE) {
+                    setcolor_btn.setVisibility(View.VISIBLE);
+                    nextday_btn.setVisibility(View.VISIBLE);
+                    boxclear_btn.setVisibility(View.VISIBLE);
+                    setquest_btn.setVisibility(View.VISIBLE);
+                }
+                else {
+                    setcolor_btn.setVisibility(View.GONE);
+                    nextday_btn.setVisibility(View.GONE);
+                    boxclear_btn.setVisibility(View.GONE);
+                    setquest_btn.setVisibility(View.GONE);
+                }
+            }
+        });
         nextday_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextday_btn.setText("Next The Day(Current Day:" + LeinerSystem.nextDay() + ")");
+                nextday_btn.setText("Next The Day(Current Day: " + LeinerSystem.nextDay() + ")");
             }
         });
         boxclear_btn.setOnClickListener(new View.OnClickListener() {
@@ -109,14 +127,12 @@ public class UserFragment extends Fragment {
         setquest_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LeinerSystem.COMPLETING = false;
-                LeinerSystem.add("0");
-                LeinerSystem.add("1");
-                LeinerSystem.add("2");
-                LeinerSystem.add("3");
-                LeinerSystem.add("4");
-                LeinerSystem.add("5");
-                LeinerSystem.add("6");
+                LeinerSystem.add("a b c /'eibi:'si:/");
+                LeinerSystem.add("abaddon /ə'bædən/");
+                LeinerSystem.add("abdomen /'æbdəmen/");
+                LeinerSystem.add("filing /'failiɳ/");
+                LeinerSystem.add("shaped /ʃeipt/");
+                LeinerSystem.add("invoke /in'vouk/");
 
             }
         });
@@ -128,6 +144,7 @@ public class UserFragment extends Fragment {
         changeq_btn =  rootView.findViewById(R.id.user_changeQ_btn);
         complete_btn =  rootView.findViewById(R.id.user_complete_btn);
         setting_btn =  rootView.findViewById(R.id.user_setting_btn);
+        setcolor_btn = rootView.findViewById(R.id.user_colorset_btn);
         nextday_btn = rootView.findViewById(R.id.user_nextday_btn);
         boxclear_btn = rootView.findViewById(R.id.user_boxclear_btn);
         setquest_btn = rootView.findViewById(R.id.user_setquest_btn);

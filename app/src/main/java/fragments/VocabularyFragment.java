@@ -64,5 +64,6 @@ public class VocabularyFragment extends Fragment {
         });
         recyclerView.setAdapter(mAdapter);
         super.onResume();
+        super.onResume();
     }
 }

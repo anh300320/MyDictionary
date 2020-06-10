@@ -1,10 +1,11 @@
 package objects;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WordList {
-    public List<Word> listWord = new ArrayList<>();
+public class WordList implements Serializable {
+    protected List<Word> listWord = new ArrayList<>();
 
     public List<Word> getListWord() {
         return listWord;
@@ -38,7 +39,7 @@ public class WordList {
         listWord.remove(word);
     }
 
-    public boolean isEmpty(){
+    public boolean isNull(){
         return (listWord.isEmpty());
     }
 
