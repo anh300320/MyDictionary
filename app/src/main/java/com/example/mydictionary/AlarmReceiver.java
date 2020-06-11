@@ -26,13 +26,13 @@ public class AlarmReceiver extends BroadcastReceiver {
         Bundle wordBundle = intent.getExtras();
 //        Word word =(Word) intent.getSerializableExtra("word");
        // assert wordBundle != null;
-        Word word = (Word) wordBundle.getSerializable("word");
+        String word = intent.getStringExtra("word");
         createNotificationChannel(context);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "noti_bookmark")
                 .setSmallIcon(R.drawable.ic_vocab_black_24dp)
-                .setContentTitle(word.getKey())
-                .setContentText(word.showMeaning())
+                .setContentTitle(word)
+                .setContentText(word)
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText("Learn your words"))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
