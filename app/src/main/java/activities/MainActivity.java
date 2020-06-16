@@ -39,6 +39,7 @@ import java.util.List;
 
 import fragments.BookmarkFragment;
 import fragments.SearchFragment;
+import fragments.User2Fragment;
 import fragments.UserFragment;
 import fragments.VocabularyFragment;
 import objects.Hashtag;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     SearchFragment searchFragment = new SearchFragment();
     BookmarkFragment bookmarkFragment = new BookmarkFragment();
     VocabularyFragment vocabularyFragment = new VocabularyFragment();
-    UserFragment userFragment = new UserFragment();
+    User2Fragment userFragment = new User2Fragment();
 
 
 

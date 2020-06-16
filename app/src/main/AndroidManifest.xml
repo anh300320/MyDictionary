@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="activities.AlarmActivity"></activity>
+        <activity android:name="activities.DoQuest2Activity"></activity>
+        <activity android:name="activities.QuestActivity" />
+        <activity android:name="activities.AlarmActivity" />
         <activity android:name="activities.HashtagActivity" />
         <activity android:name="activities.WordMarkActivity" />
         <activity android:name="activities.WordDetailActivity" />
@@ -27,7 +29,7 @@
         <receiver
             android:name=".AlarmReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
     </application>
 
 </manifest>

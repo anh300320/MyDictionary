@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.mydictionary.LeinerSystem;
+import com.example.mydictionary.ListQuests;
 import com.example.mydictionary.ListTags;
 import com.example.mydictionary.ListWords;
 import com.example.mydictionary.R;
@@ -25,6 +26,7 @@ import adapters.SearchListAdapter;
 import interfaces.OnItemClickListener;
 import objects.Hashtag;
 import objects.Word;
+import objects.WordQuest;
 
 public class HashtagActivity extends AppCompatActivity {
 
@@ -82,9 +84,9 @@ public class HashtagActivity extends AppCompatActivity {
                 finish();
             case R.id.hashtag_addbox_item:
                 for (Word word : hashtag.getListWord()) {
-                    LeinerSystem.add(word.getKey());
+                    WordQuest wordQuest = new WordQuest(word, false);
+                    ListQuests.add(wordQuest, getBaseContext());
                 }
-                LeinerSystem.saveToFile(getBaseContext());
                 Toast.makeText(HashtagActivity.this, "Done", Toast.LENGTH_SHORT).show();
                 break;
         }

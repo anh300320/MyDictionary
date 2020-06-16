@@ -19,6 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="activities.DoQuest2Activity" />
+        <activity android:name="activities.QuestActivity" />
         <activity android:name="activities.AlarmActivity" />
         <activity android:name="activities.HashtagActivity" />
         <activity android:name="activities.WordMarkActivity" />

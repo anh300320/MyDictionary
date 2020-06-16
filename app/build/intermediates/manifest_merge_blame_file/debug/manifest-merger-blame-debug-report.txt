@@ -11,7 +11,7 @@
 9-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:5:5-31:19
+11-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:5:5-33:19
 12        android:allowBackup="true"
 12-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -28,50 +28,56 @@
 19-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:10:9-35
 20        android:theme="@style/AppTheme" >
 20-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:11:9-40
-21        <activity android:name="activities.AlarmActivity" />
-21-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:12:9-70
-21-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:12:19-58
-22        <activity android:name="activities.HashtagActivity" />
-22-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:13:9-63
-22-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:13:19-60
-23        <activity android:name="activities.WordMarkActivity" />
-23-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:14:9-64
-23-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:14:19-61
-24        <activity android:name="activities.WordDetailActivity" />
-24-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:15:9-66
-24-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:15:19-63
-25        <activity android:name="activities.AddWordActivity" />
-25-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:16:9-63
-25-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:16:19-60
-26        <activity android:name="activities.ChangeQuestActivity" />
-26-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:17:9-67
-26-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:17:19-64
-27        <activity android:name="activities.DoQuestActivity" />
+21        <activity android:name="activities.DoQuest2Activity" />
+21-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:12:9-73
+21-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:12:19-61
+22        <activity android:name="activities.QuestActivity" />
+22-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:13:9-61
+22-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:13:19-58
+23        <activity android:name="activities.AlarmActivity" />
+23-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:14:9-61
+23-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:14:19-58
+24        <activity android:name="activities.HashtagActivity" />
+24-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:15:9-63
+24-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:15:19-60
+25        <activity android:name="activities.WordMarkActivity" />
+25-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:16:9-64
+25-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:16:19-61
+26        <activity android:name="activities.WordDetailActivity" />
+26-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:17:9-66
+26-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:17:19-63
+27        <activity android:name="activities.AddWordActivity" />
 27-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:18:9-63
 27-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:18:19-60
-28        <activity android:name="activities.MainActivity" >
-28-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:19:9-25:20
-28-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:19:19-57
-29            <intent-filter>
-29-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:20:13-24:29
-30                <action android:name="android.intent.action.MAIN" />
-30-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:21:17-69
-30-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:21:25-66
-31
-32                <category android:name="android.intent.category.LAUNCHER" />
-32-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:23:17-77
-32-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:23:27-74
-33            </intent-filter>
-34        </activity>
-35
-36        <receiver
-36-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:27:9-30:48
-37            android:name="com.example.mydictionary.AlarmReceiver"
-37-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:28:13-42
-38            android:enabled="true"
-38-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:29:13-35
-39            android:exported="true" />
-39-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:30:13-36
-40    </application>
-41
-42</manifest>
+28        <activity android:name="activities.ChangeQuestActivity" />
+28-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:19:9-67
+28-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:19:19-64
+29        <activity android:name="activities.DoQuestActivity" />
+29-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:20:9-63
+29-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:20:19-60
+30        <activity android:name="activities.MainActivity" >
+30-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:21:9-27:20
+30-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:21:19-57
+31            <intent-filter>
+31-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:22:13-26:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:23:17-69
+32-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:23:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:25:17-77
+34-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:25:27-74
+35            </intent-filter>
+36        </activity>
+37
+38        <receiver
+38-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:29:9-32:39
+39            android:name="com.example.mydictionary.AlarmReceiver"
+39-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:30:13-42
+40            android:enabled="true"
+40-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:31:13-35
+41            android:exported="true" />
+41-->C:\Users\admin\AndroidStudioProjects\MyDictionaryFinal\app\src\main\AndroidManifest.xml:32:13-36
+42    </application>
+43
+44</manifest>

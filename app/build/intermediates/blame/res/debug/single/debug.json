@@ -40,6 +40,10 @@
         "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\layout\\item_meaning.xml"
     },
     {
+        "merged": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_quest.xml.flat",
+        "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\layout\\activity_quest.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
@@ -58,6 +62,10 @@
     {
         "merged": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_do_quest2.xml.flat",
+        "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\layout\\activity_do_quest2.xml"
     },
     {
         "merged": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\build\\intermediates\\res\\merged\\debug\\menu_addword_menu.xml.flat",
@@ -132,6 +140,10 @@
         "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_quest.xml.flat",
+        "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\layout\\item_quest.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_change_quest.xml.flat",
         "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\layout\\activity_change_quest.xml"
     },
@@ -146,6 +158,10 @@
     {
         "merged": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout_quest_key_list_view.xml.flat",
         "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\layout\\quest_key_list_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_user2.xml.flat",
+        "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\layout\\fragment_user2.xml"
     },
     {
         "merged": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_border.xml.flat",

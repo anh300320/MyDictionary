@@ -16,10 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mydictionary.LeinerSystem;
+import com.example.mydictionary.ListQuests;
 import com.example.mydictionary.R;
 
 import adapters.WordDetailAdapter;
 import objects.Word;
+import objects.WordQuest;
 
 public class WordDetailActivity extends AppCompatActivity {
 
@@ -88,12 +90,8 @@ public class WordDetailActivity extends AppCompatActivity {
                 startActivity(intent1);
                 break;
             case R.id.add_to_quest_item:
-                String key = word.getKey();
-                if (!LeinerSystem.add(key)) {
-                    LeinerSystem.saveToFile(getBaseContext());
-                    Toast.makeText(WordDetailActivity.this,"Done", Toast.LENGTH_SHORT).show();
-                }
-                else Toast.makeText(WordDetailActivity.this,"This word is already exist in one of your Box", Toast.LENGTH_LONG).show();
+                WordQuest wordQuest = new WordQuest(word, false);
+                ListQuests.add(wordQuest, getBaseContext());
                 break;
         }
         return true;

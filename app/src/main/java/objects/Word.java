@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Word implements Serializable {
-    String key;
+    protected String key;
     protected List<Meaning> meanings = new ArrayList<>();
 
     public Word(){ }

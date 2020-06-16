@@ -47,6 +47,10 @@ public class TagListAdapter extends RecyclerView.Adapter<TagListAdapter.MyViewHo
         return list.size();
     }
 
+    public Hashtag get(int position) {
+        return list.get(position);
+    }
+
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView tvTag;
