@@ -18,6 +18,7 @@ import java.util.List;
 
 import interfaces.OnItemClickListener;
 import objects.Meaning;
+import objects.Word;
 import objects.WordQuest;
 
 public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.MyViewHolder> {
@@ -26,6 +27,10 @@ public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.MyViewHolder
     Context context;
     private List<WordQuest> list;
     private OnItemClickListener itemClickListener;
+
+    public Word get(int position){
+        return list.get(position);
+    }
 
 
     public QuestAdapter(List<WordQuest> list, Context context) {
@@ -49,7 +54,7 @@ public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull QuestAdapter.MyViewHolder holder, int position) {
         Meaning meaning = list.get(position).getRandomMeaning();
         holder.tvType.setText(meaning.getType());
-        holder.tvMeaning.setText(meaning.getMeanings());
+        holder.tvMeaning.setText(meaning.getMeanings(1));
         final int pos = position;
         final MyViewHolder myViewHolder = holder;
         holder.btnSubmit.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +68,7 @@ public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.MyViewHolder
                 } else Toast.makeText(context, "Wrong answer!", Toast.LENGTH_SHORT).show();
             }
         });
+        holder.setItemClickListener(itemClickListener);
     }
 
     @Override
@@ -70,12 +76,13 @@ public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.MyViewHolder
         return list.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener {
 
         TextView tvType;
         TextView tvMeaning;
         EditText etKey;
         Button btnSubmit;
+        OnItemClickListener itemClickListener;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -84,11 +91,17 @@ public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.MyViewHolder
             tvMeaning = itemView.findViewById(R.id.item_quest_text_meaning);
             etKey = itemView.findViewById(R.id.item_quest_edit_key);
             btnSubmit = itemView.findViewById(R.id.item_quest_button_submit);
+            itemView.setOnLongClickListener(this);
         }
 
         @Override
-        public void onClick(View v) {
+        public boolean onLongClick(View v) {
+            itemClickListener.onClick(v, getAdapterPosition());
+            return true;
+        }
 
+        public void setItemClickListener(OnItemClickListener itemClickListener){
+            this.itemClickListener = itemClickListener;
         }
     }
 }

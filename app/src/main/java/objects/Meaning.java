@@ -40,6 +40,16 @@ public class Meaning implements Serializable {
         return result;
     }
 
+    public String getMeanings(int x){
+        int size = meaning.size();
+        String result = "";
+        for(int i = 0; i< size; i++){
+            if (meaning.get(i).charAt(0) != '=')
+                result = result + meaning.get(i) + "\n";
+        }
+        return result;
+    }
+
     public void setMeaning(List<String> meaning) {
         this.meaning = meaning;
     }
