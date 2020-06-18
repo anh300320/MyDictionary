@@ -128,6 +128,11 @@ public class VocabularyFragment extends Fragment {
                 intent.putExtra("hashtag", ListTags.get(position));
                 startActivity(intent);
             }
+
+            @Override
+            public void onSubmit(View view, int position, boolean isCorrect) {
+
+            }
         });
         recyclerView.setAdapter(mAdapter);
         super.onResume();
@@ -142,6 +147,11 @@ public class VocabularyFragment extends Fragment {
                 Intent intent = new Intent(getContext(), HashtagActivity.class);
                 intent.putExtra("hashtag", mAdapter.get(position));
                 startActivity(intent);
+            }
+
+            @Override
+            public void onSubmit(View view, int position, boolean isCorrect) {
+
             }
         });
         recyclerView.setAdapter(mAdapter);

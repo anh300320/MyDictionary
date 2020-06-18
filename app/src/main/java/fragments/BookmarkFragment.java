@@ -59,6 +59,11 @@ public class BookmarkFragment extends Fragment {
             public void onClick(View view, int position) {
                 Toast.makeText(getContext(), "Clicked!", Toast.LENGTH_SHORT).show();
             }
+
+            @Override
+            public void onSubmit(View view, int position, boolean isCorrect) {
+
+            }
         });
         recyclerView.setAdapter(mAdapter);
     }

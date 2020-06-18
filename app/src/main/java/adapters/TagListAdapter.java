@@ -58,6 +58,11 @@ public class TagListAdapter extends RecyclerView.Adapter<TagListAdapter.MyViewHo
             @Override
             public void onClick(View view, int position) {
             }
+
+            @Override
+            public void onSubmit(View view, int position, boolean isCorrect) {
+
+            }
         };
 
         public MyViewHolder(@NonNull View itemView) {

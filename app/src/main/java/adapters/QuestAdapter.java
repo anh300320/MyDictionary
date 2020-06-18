@@ -27,10 +27,26 @@ public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.MyViewHolder
     Context context;
     private List<WordQuest> list;
     private OnItemClickListener itemClickListener;
+    private OnItemClickListener submitListener;
+
+    private int mistake = 0;
+
+    public int getMistake() {
+        return mistake;
+    }
+
+    public void incMistake(){
+        mistake++;
+    }
+
+    public void remove(int position){
+        list.remove(position);
+    }
 
     public Word get(int position){
         return list.get(position);
     }
+
 
 
     public QuestAdapter(List<WordQuest> list, Context context) {
@@ -40,6 +56,10 @@ public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.MyViewHolder
 
     public void setOnItemClickListener(OnItemClickListener itemClickListener){
         this.itemClickListener = itemClickListener;
+    }
+
+    public void setSubmitListener(OnItemClickListener submitListener){
+        this.submitListener = submitListener;
     }
 
     @NonNull
@@ -61,11 +81,13 @@ public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.MyViewHolder
             @Override
             public void onClick(View v) {
                 String answer = myViewHolder.etKey.getText().toString().trim();
-                if(answer.equals(list.get(pos).getRawKey().trim())){
-                    list.remove(pos);
-                    notifyDataSetChanged();
-                    Toast.makeText(context, "Correct!!!", Toast.LENGTH_SHORT).show();
-                } else Toast.makeText(context, "Wrong answer!", Toast.LENGTH_SHORT).show();
+                submitListener.onSubmit(v, pos, answer.equals(list.get(pos).getRawKey().trim()));
+//                String answer = myViewHolder.etKey.getText().toString().trim();
+//                if(answer.equals(list.get(pos).getRawKey().trim())){
+//                    list.remove(pos);
+//                    notifyDataSetChanged();
+//                    Toast.makeText(context, "Correct!!!", Toast.LENGTH_SHORT).show();
+//                } else Toast.makeText(context, "Wrong answer!", Toast.LENGTH_SHORT).show();
             }
         });
         holder.setItemClickListener(itemClickListener);

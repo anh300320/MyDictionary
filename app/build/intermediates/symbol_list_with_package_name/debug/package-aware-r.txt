@@ -1282,6 +1282,7 @@ id detail_key
 id detail_list
 id detail_toolbar
 id dialog_button
+id dialog_finish_quest_text
 id dimensions
 id direct
 id disableHome
@@ -1592,6 +1593,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout dialog_finish_quest
 layout floating_search_layout
 layout fragment_bookmark
 layout fragment_newword

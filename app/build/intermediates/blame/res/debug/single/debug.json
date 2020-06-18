@@ -24,6 +24,10 @@
         "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\layout\\fragment_bookmark.xml"
     },
     {
+        "merged": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_finish_quest.xml.flat",
+        "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\layout\\dialog_finish_quest.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\admin\\AndroidStudioProjects\\MyDictionaryFinal\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },

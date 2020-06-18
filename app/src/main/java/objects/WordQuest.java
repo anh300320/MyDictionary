@@ -6,9 +6,24 @@ public class WordQuest extends Word {
 
     boolean isPass = false;
 
+    private int mistake;
+
+    public void incMistake(){
+        mistake++;
+    }
+
+    public int getMistake() {
+        return mistake;
+    }
+
+    public void setMistake(int mistake) {
+        this.mistake = mistake;
+    }
+
     public WordQuest(Word word, boolean isPass) {
         super(word);
         this.isPass = isPass;
+        mistake = 0;
     }
 
     public boolean isPass() {

@@ -64,6 +64,10 @@ public class HashtagActivity extends AppCompatActivity {
                 intent.putExtra("word", word);
                 startActivity(intent);
             }
+
+            @Override
+            public void onSubmit(View view, int position, boolean isCorrect) {
+            }
         });
 
         recyclerView.setAdapter(mAdapter);
